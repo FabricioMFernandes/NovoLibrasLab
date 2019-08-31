@@ -1,59 +1,54 @@
 {
-  "description": "The iconic font, CSS, and SVG framework",
-  "keywords": [
-    "font",
-    "awesome",
-    "fontawesome",
-    "icon",
-    "svg",
-    "bootstrap"
-  ],
-  "homepage": "https://fontawesome.com",
-  "bugs": {
-    "url": "http://github.com/FortAwesome/Font-Awesome/issues"
-  },
-  "author": {
-    "name": "Dave Gandy",
-    "email": "dave@fontawesome.com",
-    "web": "http://twitter.com/davegandy"
-  },
-  "contributors": [
-    {
-      "name": "Brian Talbot",
-      "web": "http://twitter.com/talbs"
+    "title": "SB Admin 2",
+    "name": "startbootstrap-sb-admin-2",
+    "version": "4.0.6",
+    "scripts": {
+        "start": "node_modules/.bin/gulp watch"
     },
-    {
-      "name": "Travis Chase",
-      "web": "http://twitter.com/supercodepoet"
+    "description": "An open source Bootstrap 4 admin theme.",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template",
+        "admin",
+        "app"
+    ],
+    "homepage": "https://startbootstrap.com/template-overviews/sb-admin-2",
+    "bugs": {
+        "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues",
+        "email": "feedback@startbootstrap.com"
     },
-    {
-      "name": "Rob Madole",
-      "web": "http://twitter.com/robmadole"
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "contributors": [
+        "David Miller (http://davidmiller.io/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
     },
-    {
-      "name": "Geremia Taglialatela",
-      "web": "http://twitter.com/gtagliala"
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "5.9.0",
+        "bootstrap": "4.3.1",
+        "chart.js": "2.8.0",
+        "datatables.net-bs4": "1.10.19",
+        "jquery": "3.4.1",
+        "jquery.easing": "^1.4.1"
     },
-    {
-      "name": "Mike Wilkerson",
-      "web": "http://twitter.com/mw77"
+    "devDependencies": {
+        "browser-sync": "2.26.7",
+        "del": "4.1.1",
+        "gulp": "4.0.2",
+        "gulp-autoprefixer": "6.1.0",
+        "gulp-clean-css": "4.2.0",
+        "gulp-header": "2.0.7",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "1.4.0",
+        "gulp-sass": "4.0.2",
+        "gulp-uglify": "3.0.2",
+        "merge-stream": "2.0.0"
     }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FortAwesome/Font-Awesome"
-  },
-  "engines": {
-    "node": ">=6"
-  },
-  "dependencies": {},
-  "version": "5.9.0",
-  "name": "@fortawesome/fontawesome-free",
-  "main": "js/fontawesome.js",
-  "style": "css/fontawesome.css",
-  "license": "(CC-BY-4.0 AND OFL-1.1 AND MIT)"
-
-,"_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.9.0.tgz"
-,"_integrity": "sha512-g795BBEzM/Hq2SYNPm/NQTIp3IWd4eXSH0ds87Na2jnrAUFX3wkyZAI4Gwj9DOaWMuz2/01i8oWI7P7T/XLkhg=="
-,"_from": "@fortawesome/fontawesome-free@5.9.0"
 }
