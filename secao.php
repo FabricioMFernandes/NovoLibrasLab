@@ -30,6 +30,8 @@ $userlogado->getUserByEmail($_SESSION['user']);
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/demo.css">
+
 </head>
 
 <body id="page-top">
@@ -128,7 +130,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
                 <div class="row">
 
                     <div class="col-xl-9 col-md-12 mb-12" style="margin: auto">
-                        <div class="card border-left-primary shadow h-100 py-2">
+                        <div style="padding-top: 0px;" class="card border-left-primary shadow h-100 ">
                             <div >
                                 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
                                     id="accordionSidebar">
@@ -136,10 +138,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                     <!-- Sidebar - Brand -->
                                     <a class="sidebar-brand d-flex align-items-center justify-content-center"
                                        href="index.html">
-                                        <div class="sidebar-brand-icon rotate-n-15">
-                                            <i class="fas fa-laugh-wink"></i>
-                                        </div>
-                                        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                                        <div class="sidebar-brand-text mx-3">Nivel 1</div>
                                     </a>
 
                                     <!-- Divider -->
@@ -155,95 +154,9 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                     <!-- Divider -->
                                     <hr class="sidebar-divider">
 
-                                    <!-- Heading -->
-                                    <div class="sidebar-heading">
-                                        Interface
-                                    </div>
 
-                                    <!-- Nav Item - Pages Collapse Menu -->
-                                    <li class="nav-item">
-                                        <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                           data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                            <i class="fas fa-fw fa-cog"></i>
-                                            <span>Components</span>
-                                        </a>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                             data-parent="#accordionSidebar">
-                                            <div class="bg-white py-2 collapse-inner rounded">
-                                                <h6 class="collapse-header">Custom Components:</h6>
-                                                <a class="collapse-item" href="buttons.html">Buttons</a>
-                                                <a class="collapse-item" href="cards.html">Cards</a>
-                                            </div>
-                                        </div>
-                                    </li>
 
-                                    <!-- Nav Item - Utilities Collapse Menu -->
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="#" data-toggle="collapse"
-                                           data-target="#collapseUtilities" aria-expanded="true"
-                                           aria-controls="collapseUtilities">
-                                            <i class="fas fa-fw fa-wrench"></i>
-                                            <span>Utilities</span>
-                                        </a>
-                                        <div id="collapseUtilities" class="collapse show"
-                                             aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                                            <div class="bg-white py-2 collapse-inner rounded">
-                                                <h6 class="collapse-header">Custom Utilities:</h6>
-                                                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                                                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                                                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                                                <a class="collapse-item active" href="utilities-other.html">Other</a>
-                                            </div>
-                                        </div>
-                                    </li>
 
-                                    <!-- Divider -->
-                                    <hr class="sidebar-divider">
-
-                                    <!-- Heading -->
-                                    <div class="sidebar-heading">
-                                        Addons
-                                    </div>
-
-                                    <!-- Nav Item - Pages Collapse Menu -->
-                                    <li class="nav-item">
-                                        <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                           data-target="#collapsePages" aria-expanded="true"
-                                           aria-controls="collapsePages">
-                                            <i class="fas fa-fw fa-folder"></i>
-                                            <span>Pages</span>
-                                        </a>
-                                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
-                                             data-parent="#accordionSidebar">
-                                            <div class="bg-white py-2 collapse-inner rounded">
-                                                <h6 class="collapse-header">Login Screens:</h6>
-                                                <a class="collapse-item" href="login.html">Login</a>
-                                                <a class="collapse-item" href="register.html">Register</a>
-                                                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                                                <div class="collapse-divider"></div>
-                                                <h6 class="collapse-header">Other Pages:</h6>
-                                                <a class="collapse-item" href="404.html">404 Page</a>
-                                                <a class="collapse-item" href="blank.html">Blank Page</a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Nav Item - Charts -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="charts.html">
-                                            <i class="fas fa-fw fa-chart-area"></i>
-                                            <span>Charts</span></a>
-                                    </li>
-
-                                    <!-- Nav Item - Tables -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="tables.html">
-                                            <i class="fas fa-fw fa-table"></i>
-                                            <span>Tables</span></a>
-                                    </li>
-
-                                    <!-- Divider -->
-                                    <hr class="sidebar-divider d-none d-md-block">
 
                                     <!-- Sidebar Toggler (Sidebar) -->
                                     <div class="text-center d-none d-md-inline">
@@ -252,6 +165,18 @@ $userlogado->getUserByEmail($_SESSION['user']);
 
                                 </ul>
                             </div>
+                            <div id="container">
+                                <div tabindex="0" class="plyr plyr--full-ui plyr--video plyr--html5 plyr--paused plyr--stopped plyr--fullscreen-enabled plyr--captions-active plyr--captions-enabled plyr__poster-enabled"><div class="plyr__controls"><button class="plyr__controls__item plyr__control" type="button" data-plyr="play" aria-label="Play, View From A Blue Moon"><svg class="icon--pressed" role="presentation" focusable="false"><use xlink:href="#plyr-pause"></use></svg><svg class="icon--not-pressed" role="presentation" focusable="false"><use xlink:href="#plyr-play"></use></svg><span class="label--pressed plyr__tooltip">Pause</span><span class="label--not-pressed plyr__tooltip">Play</span></button><div class="plyr__controls__item plyr__progress__container"><div class="plyr__progress"><input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" autocomplete="off" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="183.125333" aria-valuenow="0" id="plyr-seek-5458" style="--value:0%;" aria-valuetext="00:00 of 03:03" seek-value="21.84189659889218"><progress class="plyr__progress__buffer" min="0" max="100" value="25.9669152383193" role="progressbar" aria-hidden="true">% buffered</progress><span class="plyr__tooltip" style="left: 19.1505%;" hidden="">00:35</span><div class="plyr__preview-thumb" style="left: 0.5px;"><div class="plyr__preview-thumb__image-container" style="height: 115px; width: 204px;"><img src="https://cdn.plyr.io/static/demo/thumbs/100p-00001.jpg" data-index="39" data-filename="100p-00001.jpg" style="height: 804px; width: 1432px; left: -818.8px; top: -575px;"></div><div class="plyr__preview-thumb__time-container"><span>00:39</span></div></div></div></div><div class="plyr__controls__item plyr__time--current plyr__time" aria-label="Current time">-03:03</div><div class="plyr__controls__item plyr__volume"><button type="button" class="plyr__control" data-plyr="mute"><svg class="icon--pressed" role="presentation" focusable="false"><use xlink:href="#plyr-muted"></use></svg><svg class="icon--not-pressed" role="presentation" focusable="false"><use xlink:href="#plyr-volume"></use></svg><span class="label--pressed plyr__tooltip">Unmute</span><span class="label--not-pressed plyr__tooltip">Mute</span></button><input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="plyr-volume-5458" style="--value:100%;" aria-valuetext="100.0%"></div><button class="plyr__controls__item plyr__control plyr__control--pressed" type="button" data-plyr="captions"><svg class="icon--pressed" role="presentation" focusable="false"><use xlink:href="#plyr-captions-on"></use></svg><svg class="icon--not-pressed" role="presentation" focusable="false"><use xlink:href="#plyr-captions-off"></use></svg><span class="label--pressed plyr__tooltip">Disable captions</span><span class="label--not-pressed plyr__tooltip">Enable captions</span></button><div class="plyr__controls__item plyr__menu"><button aria-haspopup="true" aria-controls="plyr-settings-5458" aria-expanded="false" type="button" class="plyr__control" data-plyr="settings"><svg role="presentation" focusable="false"><use xlink:href="#plyr-settings"></use></svg><span class="plyr__tooltip">Settings</span></button><div class="plyr__menu__container" id="plyr-settings-5458" hidden=""><div><div id="plyr-settings-5458-home"><div role="menu"><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Captions<span class="plyr__menu__value">English</span></span></button><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Quality<span class="plyr__menu__value">576p</span></span></button><button data-plyr="settings" type="button" class="plyr__control plyr__control--forward" role="menuitem" aria-haspopup="true"><span>Speed<span class="plyr__menu__value">Normal</span></span></button></div></div><div id="plyr-settings-5458-captions" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Captions</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="-1"><span>Disabled</span></button><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="0"><span>English<span class="plyr__menu__value"><span class="plyr__badge">EN</span></span></span></button><button data-plyr="language" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1"><span>Français<span class="plyr__menu__value"><span class="plyr__badge">FR</span></span></span></button></div></div><div id="plyr-settings-5458-quality" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Quality</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1080"><span>1080p<span class="plyr__menu__value"><span class="plyr__badge">HD</span></span></span></button><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="720"><span>720p<span class="plyr__menu__value"><span class="plyr__badge">HD</span></span></span></button><button data-plyr="quality" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="576"><span>576p<span class="plyr__menu__value"><span class="plyr__badge">SD</span></span></span></button></div></div><div id="plyr-settings-5458-speed" hidden=""><button type="button" class="plyr__control plyr__control--back"><span aria-hidden="true">Speed</span><span class="plyr__sr-only">Go back to previous menu</span></button><div role="menu"><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="0.5"><span>0.5×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="0.75"><span>0.75×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="true" value="1"><span>Normal</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.25"><span>1.25×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.5"><span>1.5×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="1.75"><span>1.75×</span></button><button data-plyr="speed" type="button" role="menuitemradio" class="plyr__control" aria-checked="false" value="2"><span>2×</span></button></div></div></div></div></div><button class="plyr__controls__item plyr__control" type="button" data-plyr="fullscreen"><svg class="icon--pressed" role="presentation" focusable="false"><use xlink:href="#plyr-exit-fullscreen"></use></svg><svg class="icon--not-pressed" role="presentation" focusable="false"><use xlink:href="#plyr-enter-fullscreen"></use></svg><span class="label--pressed plyr__tooltip">Exit fullscreen</span><span class="label--not-pressed plyr__tooltip">Enter fullscreen</span></button></div><div class="plyr__video-wrapper"><video crossorigin="" playsinline="" poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4">
+                                            <!-- Video files -->
+                                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+                                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+                                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+
+                                            <!-- Caption files -->
+                                            <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default="">
+                                            <tprack kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+
+                                            </div>
                         </div>
                         <br>
                     </div>
@@ -319,6 +244,8 @@ $userlogado->getUserByEmail($_SESSION['user']);
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <script src="https://cdn.plyr.io/3.5.6/demo.js" crossorigin="anonymous"></script>
 
 </body>
 
