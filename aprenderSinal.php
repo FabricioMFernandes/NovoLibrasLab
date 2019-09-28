@@ -6,6 +6,10 @@ function __autoload($class_name)
     require_once 'classes/' . $class_name . '.php';
 }
 
+if(isset($_SESSION['user'])){
+    header('location:login.html');
+}
+
 $userlogado = new User('localhost', 'root', '', 'libraslab');
 $userlogado->getUserByEmail($_SESSION['user']);
 ?>
@@ -48,45 +52,12 @@ $userlogado->getUserByEmail($_SESSION['user']);
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
 
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input name="pesquisa" type="text" class="form-control bg-light border-0 small"
-                               placeholder="Pesquisar..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                    <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                             aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
-                                <div class="input-group">
-                                    <input name="pesquisa" type="text" class="form-control bg-light border-0 small"
-                                           placeholder="Pesquisar..." aria-label="Search"
-                                           aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
+
 
 
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -136,7 +107,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php">Seção 1</a>
+                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php?sessao=1">Alfabeto</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
@@ -158,7 +129,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-warning text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #f6c23e" href="exercitar.php">Seção 1</a>
+                                            <a style="text-decoration: none; color: #f6c23e" href="secao.php?sessao=2">Números</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
@@ -178,7 +149,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #4e73df" href="memorizar.php">Seção 1</a>
+                                            <a style="text-decoration: none; color: #4e73df" href="secao.php?sessao=3">Expressões</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
@@ -191,6 +162,91 @@ $userlogado->getUserByEmail($_SESSION['user']);
                         <br>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php?sessao=4">Pronomes</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span>0/3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-warning text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #f6c23e" href="secao.php?sessao=5">Sobre você</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span>0/3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #4e73df" href="secao.php?sessao=6">Verbos</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span>0/3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php?sessao=7">Cores</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span>0/3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
 
                 <!-- /.container-fluid -->
 
