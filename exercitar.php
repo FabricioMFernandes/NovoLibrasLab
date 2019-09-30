@@ -6,12 +6,10 @@ function __autoload($class_name)
     require_once 'classes/' . $class_name . '.php';
 }
 
-if(isset($_SESSION['user'])){
+if(!isset($_SESSION['user'])){
     header('location:login.html');
 }
 
-$userlogado = new User('localhost', 'root', '', 'libraslab');
-$userlogado->getUserByEmail($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
@@ -52,12 +50,13 @@ $userlogado->getUserByEmail($_SESSION['user']);
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
 
-
-
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
-
-
+                    <li class="nav-item  no-arrow">
+                        <a class="nav-link " href="index.php" id="userDropdown" role="button">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"> HOME </span>
+                        </a>
+                    </li>
 
 
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -66,22 +65,13 @@ $userlogado->getUserByEmail($_SESSION['user']);
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo $userlogado->nome; ?> </span>
-                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo $_SESSION['user']; ?> </span>
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Perfil
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Configurações
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+
+                            <a class="dropdown-item" href="deslogar.php" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Sair
                             </a>
@@ -97,7 +87,7 @@ $userlogado->getUserByEmail($_SESSION['user']);
             <div class="container-fluid">
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Exercícios</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Atividades</h1>
                 </div>
 
                 <div class="row">
@@ -107,12 +97,12 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php?sessao=1">Alfabeto</a>
+                                            <a style="text-decoration: none; color: #1cc88a" href="pergunta.php?sessao=1">Alfabeto</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
-                                        <span>0/3</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -129,12 +119,12 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-warning text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #f6c23e" href="secao.php?sessao=2">Números</a>
+                                            <a style="text-decoration: none; color: #f6c23e" href="pergunta.php?sessao=2">Números</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
-                                        <span>0/3</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -149,12 +139,12 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #4e73df" href="secao.php?sessao=3">Expressões</a>
+                                            <a style="text-decoration: none; color: #4e73df" href="pergunta.php?sessao=3">Expressões</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
-                                        <span>0/3</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +153,47 @@ $userlogado->getUserByEmail($_SESSION['user']);
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #4e73df" href="pergunta.php?sessao=4">Pronomes</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #4e73df" href="pergunta.php?sessao=5">Sobre você</a>
+                                        </div>
+                                        <div class=" mb-0 font-weight-bold text-gray-800"></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-xl-4 col-md-12 mb-12" style="margin: auto">
@@ -172,12 +202,12 @@ $userlogado->getUserByEmail($_SESSION['user']);
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #1cc88a" href="secao.php?sessao=6">Verbos</a>
+                                            <a style="text-decoration: none; color: #4e73df" href="pergunta.php?sessao=6">Verbos</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
-                                        <span>0/3</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -192,13 +222,13 @@ $userlogado->getUserByEmail($_SESSION['user']);
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xl font-weight-bold text-success text-uppercase mb-1">
-                                            <a style="text-decoration: none; color: #f6c23e" href="secao.php?sessao=7">Cores</a>
+                                        <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">
+                                            <a style="text-decoration: none; color: #4e73df" href="pergunta.php?sessao=7">Cores</a>
                                         </div>
                                         <div class=" mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
-                                        <span>0/3</span>
+                                        <span></span>
                                     </div>
                                 </div>
                             </div>
@@ -240,15 +270,15 @@ $userlogado->getUserByEmail($_SESSION['user']);
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Realmente deseja sair?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Ao clicar em SAIR, sua sessão será fechada</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="scripts/deslogar.php">Sair</a>
                 </div>
             </div>
         </div>
